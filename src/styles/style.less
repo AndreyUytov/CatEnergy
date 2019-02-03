@@ -1,0 +1,105 @@
+@font-face {
+	font-family: cuprum;
+	src:
+		url(../fonts/cuprum.woff) format("woff"),
+		url(../fonts/cuprum.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: cuprumbold;
+	src:
+		url(../fonts/cuprumbold.woff) format("woff"),
+		url(../fonts/cuprumbold.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: cuprumbolditalic;
+	src:
+		url(../fonts/cuprumbolditalic.woff) format("woff"),
+		url(../fonts/cuprumbolditalic.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: cuprumitalic;
+	src:
+		url(../fonts/cuprumitalic.woff) format("woff"),
+		url(../fonts/cuprumitalic.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: ptsans;
+	src:
+		url(../fonts/ptsans.woff) format("woff"),
+		url(../fonts/ptsans.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: ptsansbold;
+	src:
+		url(../fonts/ptsansbold.woff) format("woff"),
+		url(../fonts/ptsansbold.woff2) format("woff2");
+}
+
+.ul-reset(){
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+@import "normalize.less";
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+
+	font-family: cuprum, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 18px;
+	color: #000000;
+
+	background-color: /*rgba(0,0,0,0.5)*/ #ffffff;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+.content-box-component {
+	box-sizing: content-box;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+	position: absolute;
+
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border:0;
+	padding: 0;
+
+	white-space: nowrap;
+
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
