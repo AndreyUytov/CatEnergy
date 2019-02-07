@@ -5,6 +5,13 @@
 		url(../fonts/oswaldregular.woff2) format("woff2");
 }
 
+@font-face {
+	font-family: oswaldmedium;
+	src:
+		url(../fonts/oswaldmedium.woff) format("woff"),
+		url(../fonts/oswaldmedium.woff2) format("woff2");
+}
+
 .ul-reset(){
 	margin: 0;
 	padding: 0;
@@ -16,6 +23,8 @@
 
 
 body {
+	min-width: 320px;
+
 	margin: 0px;
 	padding: 0px;
 
@@ -67,4 +76,6 @@ input[type="radio"].visually-hidden {
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
+
+@import 'header-block/header-block.less';
 
