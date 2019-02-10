@@ -16,15 +16,28 @@
 
 .page-header__logo {
 	width: 100%;
-	height: 65px;
+	min-height: 65px;
+	position: relative;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	cursor: pointer;
-
 	border-bottom: solid 1px #e6e6e6;
+	&::before{
+	content: '';
+	position: absolute;
+	top: 11px;
+	left: 25px;
+	width: 33px;
+	height: 38px;
+
+	background-image: url(../img/svg/logo-mobile.png);
+	background-repeat: no-repeat;
+	background-size: 33px auto;
+	background-position: left center;
+	}
 }
 
 .page-header__toggle-menu {
@@ -72,6 +85,72 @@
 	color: inherit;
 }
 
+.description__wrapper {
+	min-height: 505px;
+	padding-top: 28px;
+	padding-bottom: 22px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	background-image: url(../img/backgrounds-image/index-can-mobile.png), url(../img/backgrounds-image/index-background-mobile.jpg);
+	background-size: 280px auto,320px auto;
+	background-repeat: no-repeat, no-repeat;
+	background-position: 59% 72%, top center;
+}
+
+.conteiner {
+	width: 320px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0 auto;
+}
+
+.description__title {
+	margin: 0;
+	padding: 0;
+	width: 280px;
+	margin-bottom: 27px;
+	
+	font-family: oswald;
+	font-size: 36px;
+	line-height: 36px;
+	color: #ffffff;
+	font-weight: normal;
+	text-align: center;
+	
+}
+
+.description__slogan {
+	padding: 0;
+	margin: 0;
+
+	font-family: oswald;
+	font-size: 14px;
+	line-height: 14px;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.description__button {
+	width: 100%;
+	height: 40px;
+	margin-top: auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-family: oswald;
+	font-size: 14px;
+	line-height: 18px;
+	color: #ffffff;
+	text-transform: uppercase;
+
+	background-color: #68b738;
+}
+
 @media (min-width: 768px) {
 
  .page-header{
@@ -82,10 +161,11 @@
  }
 
  .page-header__wrapper {
+	padding-top: 24px;
+	margin-bottom: 57px;
+
  	display: flex;
  	flex-direction: row;
- 	flex-wrap: wrap;
- 	justify-content: space-between;
  	align-items: center;
  }
 
@@ -100,25 +180,30 @@
  	justify-content: flex-start;
 
 	border-bottom: none;
+	&::before {
+		display: none;
+	}
  }
 
  .page-header__nav {
- 	width: auto;
+ 	width: 516px;
+ 	margin-left: auto;
+ 	padding-top: 11px;
  }
 
  .nav-list {
-	width: 445px;
-
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 
  }
 
  .nav-list__item {
  	width: auto;
  	height: auto;
- 	padding-bottom: 12px; 
+ 	padding-bottom: 8px;
+ 	margin-right: 35px; 
 	
 	font-family: oswald;
 	font-size: 18px;
@@ -126,6 +211,9 @@
 	color: #000000;
 
 	border-bottom: none;
+ }
+ .nav-list__item:last-child {
+	margin-right: 0;
  }
 
  .nav-list__item--active {
@@ -141,6 +229,105 @@
 
 		background-color: #68b738;
  	}
+ }
+
+ .conteiner {
+	width: 768px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin: 0 auto;
+}
+
+.description__wrapper {
+	min-height: 812px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 90px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	background-image: url(../img/backgrounds-image/index-can-tablet.jpg);
+	background-size: 709px auto;
+	background-repeat: no-repeat;
+	background-position: 0% 98%;
+ }
+
+	.description__title {
+	width: 420px;
+	margin-bottom: 40px;
+	
+	font-family: oswald;
+	font-size: 60px;
+	line-height: 60px;
+	color: #000000;
+	font-weight: normal;
+	text-align: left;
+	
+ }
+
+
+.description__slogan {
+	margin-bottom: 48px;
+
+	font-size: 20px;
+	line-height: 20px;
+	color: #000000;
+ }
+
+ .description__button {
+	width: 245px;
+	height: 52px;
+	margin-top: 0;
+
+	font-size: 20px;
+	line-height: 20px;
+ }
+
+}
+
+@media (min-width: 1300px) {
+	.page-header {
+ 	width: 1300px;
+ 	margin: 0 auto;
+ 	padding-left: 40px;
+ 	padding-right: 40px;
+
+ 	background-image: url(../img/backgrounds-image/index-background-desktop.jpg);
+ 	background-size: 720px auto;
+ 	background-repeat: no-repeat;
+ 	background-position: right top;
+
+ }
+
+ .page-header__wrapper {
+	padding-top: 54px;
+	margin-bottom: 113px;
+}
+
+ .page-header__logo {
+ 	width: 202px;
+ }
+
+ .page-header__nav {
+ 	width: 610px;
+ 	margin-left: auto;
+ 	padding-top: 11px;
+ }
+
+ .nav-list__item {
+ 	padding-bottom: 12px;
+ 	margin-right: 30px; 
+	
+	font-size: 20px;
+	line-height: 25px;
+	color: #ffffff;
+
+ }
+
+ .nav-list__item--active::before {
+ 	background-color: #ffffff;
  }
 
 }
