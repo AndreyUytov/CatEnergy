@@ -1,3 +1,5 @@
+'use strict';
+
 const overlayImg = document.querySelector('.img-comp-overlay');
 const pos = document.querySelector('.position');
 const bar = document.querySelector('.bar');
@@ -7,30 +9,38 @@ const scale = document.querySelector('.scale');
 
 const mouseDownOnPos = function (pos) {
 	pos.addEventListener('mousedown', function(evt) {
-		evt.preventDefult();
+		evt.preventDefault();
 
-		let startCoord = {
-			x: evt.ClientX
+		var startCoord = {
+			x: evt.clientX
 		};
-
 		const mouseMoveOnPos = function (evtMove){
-			evtMove.preventDefult();
-			let shift = {
-				x: startCoord.x - evtMove.ClientX
+			evtMove.preventDefault();
+			var shift = {
+				x: startCoord.x - evtMove.clientX
 			};
 
 			startCoord = {
-				x: evtMove.ClientX
+				x: evtMove.clientX
 			};
 			// Код для перемещения ползунка и бара
-			
 
+      if ((pos.offsetLeft - shift.x) < 0) {
+        pos.style.left = 0 + 'px';	 
+      } if ((pos.offsetLeft - shift.x) > 70) {
+        pos.style.left = 69 + 'px';
+      } else {
+        pos.style.left = (pos.offsetLeft - shift.x) + 'px';
+      } 
+
+      // Для бара
+      
 		};
 
 		// Не забудем снять обработчики
 		
 		const mouseUpOnDocument = function(mouseUpEvt){
-			mouseUpEvt.preventDefult();
+			mouseUpEvt.preventDefault();
 			document.removeEventListener('mousedown', mouseDownOnPos);
 			document.removeEventListener ('mousemove', mouseMoveOnPos);
 		};
@@ -39,4 +49,6 @@ const mouseDownOnPos = function (pos) {
 		document.addEventListener('mouseup', mouseUpOnDocument);
 
 	})
-}
+};
+
+mouseDownOnPos(pos);
