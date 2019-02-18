@@ -13,6 +13,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const imagemin = require('gulp-imagemin');
 
+
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 gulp.task('images', function(){
